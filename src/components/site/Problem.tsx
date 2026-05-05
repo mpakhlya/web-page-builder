@@ -1,4 +1,4 @@
-import wardrobe from "@/assets/wardrobe-flatlay.jpg";
+import wardrobe from "@/assets/wardrobe-flatlay.png";
 import { useReveal } from "@/hooks/useReveal";
 
 const oldWay = [

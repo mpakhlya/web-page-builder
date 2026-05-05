@@ -1,16 +1,19 @@
 import { Sparkles, Heart, Radar, Shirt, Users, Droplets } from "lucide-react";
-import mirrorUI from "@/assets/mirror-ui.jpg";
-import emotion from "@/assets/emotion-connection.jpg";
-import multiuser from "@/assets/multiuser-couple.jpg";
+import mirrorUI from "@/assets/mirror-ui.png";
+import emotion from "@/assets/emotion-connection.png";
+import multiuser from "@/assets/multiuser-couple.png";
+import eventRadar from "@/assets/event-radar.png";
+import wardrobeIntel from "@/assets/wardrobe-intelligence.png";
+import laundryIntel from "@/assets/laundry-intelligence.png";
 import { useReveal } from "@/hooks/useReveal";
 
 const features = [
   { icon: Sparkles, title: "Style Intelligence", text: "Learns your wardrobe, your style, your preferences. Suggests outfits filtered by weather, calendar and what's clean.", img: mirrorUI },
   { icon: Heart, title: "Emotional Awareness", text: "Reads your mood before it speaks. Knows when to talk and when to stay quiet.", img: emotion },
-  { icon: Radar, title: "Lifetime Event Radar", text: "Spots events months ahead. Gently prepares you without overwhelming you. No calendar entry needed — just mention it." },
-  { icon: Shirt, title: "Wardrobe Intelligence", text: "Tracks every item. Knows what's clean, what's worn, what needs care. Calculates versatility scores automatically." },
+  { icon: Radar, title: "Lifetime Event Radar", text: "Spots events months ahead. Gently prepares you without overwhelming you. No calendar entry needed — just mention it.", img: eventRadar },
+  { icon: Shirt, title: "Wardrobe Intelligence", text: "Tracks every item. Knows what's clean, what's worn, what needs care. Calculates versatility scores automatically.", img: wardrobeIntel },
   { icon: Users, title: "Multi-user Ready", text: "Recognizes everyone in the household. Completely separate profiles. Suggests coordinated outfits when going out together.", img: multiuser },
-  { icon: Droplets, title: "Laundry Intelligence", text: "Monitors your dirty item buildup. Suggests laundry on your free days. Never on a busy day." },
+  { icon: Droplets, title: "Laundry Intelligence", text: "Monitors your dirty item buildup. Suggests laundry on your free days. Never on a busy day.", img: laundryIntel },
 ];
 
 const Features = () => {

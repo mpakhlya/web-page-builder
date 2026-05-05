@@ -1,6 +1,6 @@
 import { FormEvent, useState } from "react";
 import { toast } from "sonner";
-import bg from "@/assets/emotion-connection.jpg";
+import bg from "@/assets/emotion-connection.png";
 
 const Waitlist = () => {
   const [email, setEmail] = useState("");

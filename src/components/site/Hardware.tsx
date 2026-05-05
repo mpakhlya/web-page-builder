@@ -1,4 +1,4 @@
-import brand from "@/assets/brand-identity.jpg";
+import brand from "@/assets/brand-identity.png";
 import { useReveal } from "@/hooks/useReveal";
 
 const specs = [

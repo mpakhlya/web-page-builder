@@ -1,4 +1,4 @@
-import heroMirror from "@/assets/hero-mirror.jpg";
+import heroMirror from "@/assets/hero-mirror.png";
 import { ChevronDown } from "lucide-react";
 
 const Hero = () => {

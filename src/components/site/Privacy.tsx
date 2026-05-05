@@ -1,5 +1,5 @@
 import { Check } from "lucide-react";
-import privacyImg from "@/assets/privacy-camera.jpg";
+import privacyImg from "@/assets/privacy-camera.png";
 import { useReveal } from "@/hooks/useReveal";
 
 const promises = [

@@ -1,7 +1,7 @@
 import { Sun, Smartphone, Moon } from "lucide-react";
-import morning from "@/assets/lifestyle-morning.jpg";
-import mobile from "@/assets/mobile-companion.jpg";
-import evening from "@/assets/evening-winddown.jpg";
+import morning from "@/assets/lifestyle-morning.png";
+import mobile from "@/assets/mobile-companion.png";
+import evening from "@/assets/evening-winddown.png";
 import { useReveal } from "@/hooks/useReveal";
 
 const steps = [
