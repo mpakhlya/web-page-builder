@@ -1,16 +1,43 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import Navigation from "@/components/site/Navigation";
+import Hero from "@/components/site/Hero";
+import Problem from "@/components/site/Problem";
+import HowItWorks from "@/components/site/HowItWorks";
+import Features from "@/components/site/Features";
+import Privacy from "@/components/site/Privacy";
+import Hardware from "@/components/site/Hardware";
+import Pricing from "@/components/site/Pricing";
+import Waitlist from "@/components/site/Waitlist";
+import Footer from "@/components/site/Footer";
+import { useEffect } from "react";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const Index = () => {
+  useEffect(() => {
+    document.title = "Roommate — The proactive AI infrastructure for personal style";
+    const desc = "A smart mirror and proactive AI companion that prepares your day, learns your style, and protects your privacy.";
+    let m = document.querySelector('meta[name="description"]');
+    if (!m) {
+      m = document.createElement("meta");
+      m.setAttribute("name", "description");
+      document.head.appendChild(m);
+    }
+    m.setAttribute("content", desc);
+  }, []);
+
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
-    </div>
+    <main className="bg-background text-foreground">
+      <Navigation />
+      <h1 className="sr-only">Roommate — Proactive AI smart mirror</h1>
+      <Hero />
+      <Problem />
+      <HowItWorks />
+      <Features />
+      <Privacy />
+      <Hardware />
+      <Pricing />
+      <Waitlist />
+      <Footer />
+    </main>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
