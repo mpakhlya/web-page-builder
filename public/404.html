@@ -4,10 +4,12 @@
   <meta charset="utf-8">
   <title>Roommate</title>
   <script>
-    // GitHub Pages SPA redirect — preserves the path and sends to index.html
-    sessionStorage.redirect = location.href;
+    // Redirect any unknown path on GitHub Pages back to the SPA root
+    var base = '/web-page-builder/';
+    if (location.pathname !== base) {
+      location.replace(base);
+    }
   </script>
-  <meta http-equiv="refresh" content="0;URL='/web-page-builder/'">
 </head>
 <body></body>
 </html>
