@@ -12,7 +12,7 @@ import { useEffect } from "react";
 
 const Index = () => {
   useEffect(() => {
-    document.title = "Roommate — The proactive AI infrastructure for personal style";
+    document.title = "Roommate";
     const desc = "A smart mirror and proactive AI companion that prepares your day, learns your style, and protects your privacy.";
     let m = document.querySelector('meta[name="description"]');
     if (!m) {
