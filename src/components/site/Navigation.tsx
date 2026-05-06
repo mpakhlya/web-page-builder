@@ -19,51 +19,68 @@ const Navigation = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Lock body scroll while the mobile drawer is open
+  useEffect(() => {
+    if (open) {
+      const prev = document.body.style.overflow;
+      document.body.style.overflow = "hidden";
+      return () => {
+        document.body.style.overflow = prev;
+      };
+    }
+  }, [open]);
+
   return (
-    <header
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
-        scrolled ? "bg-background/90 backdrop-blur-md" : "bg-transparent"
-      }`}
-    >
-      <nav className="container-wide flex items-center justify-between h-20">
-        <a href="#" className="font-serif text-2xl text-foreground tracking-tight">
-          Roommate
-        </a>
+    <>
+      <header
+        className={`fixed top-0 inset-x-0 z-40 transition-all duration-500 ${
+          scrolled ? "bg-background/90 backdrop-blur-md" : "bg-transparent"
+        }`}
+      >
+        <nav className="container-wide flex items-center justify-between h-20">
+          <a href="#" className="font-serif text-2xl text-foreground tracking-tight">
+            Roommate
+          </a>
 
-        <ul className="hidden md:flex items-center gap-10">
-          {links.map((l) => (
-            <li key={l.href}>
-              <a
-                href={l.href}
-                className="text-sm text-foreground/80 hover:text-foreground transition-colors"
-              >
-                {l.label}
-              </a>
-            </li>
-          ))}
-        </ul>
+          <ul className="hidden md:flex items-center gap-10">
+            {links.map((l) => (
+              <li key={l.href}>
+                <a
+                  href={l.href}
+                  className="text-sm text-foreground/80 hover:text-foreground transition-colors"
+                >
+                  {l.label}
+                </a>
+              </li>
+            ))}
+          </ul>
 
-        <a
-          href="#waitlist"
-          className="hidden md:inline-flex items-center px-5 py-2.5 text-sm border border-gold text-foreground hover:bg-gold hover:text-accent-foreground transition-colors"
-        >
-          Join Waitlist
-        </a>
+          <a
+            href="#waitlist"
+            className="hidden md:inline-flex items-center px-5 py-2.5 text-sm border border-gold text-foreground hover:bg-gold hover:text-accent-foreground transition-colors"
+          >
+            Join Waitlist
+          </a>
 
-        <button
-          aria-label="Open menu"
-          className="md:hidden text-foreground"
-          onClick={() => setOpen(true)}
-        >
-          <Menu size={24} />
-        </button>
-      </nav>
+          <button
+            aria-label="Open menu"
+            className="md:hidden text-foreground"
+            onClick={() => setOpen(true)}
+          >
+            <Menu size={24} />
+          </button>
+        </nav>
+      </header>
 
-      {/* Mobile drawer */}
+      {/* Mobile drawer — rendered as sibling of header so it always covers everything */}
       <div
-        className={`md:hidden fixed inset-0 z-50 bg-background transition-transform duration-500 ${
+        className={`md:hidden fixed inset-0 z-[100] bg-[#0A0A0A] transition-transform duration-500 ${
           open ? "translate-x-0" : "translate-x-full"
         }`}
+        style={{
+          paddingTop: "env(safe-area-inset-top)",
+          paddingBottom: "env(safe-area-inset-bottom)",
+        }}
       >
         <div className="flex items-center justify-between h-20 container-wide">
           <span className="font-serif text-2xl">Roommate</span>
@@ -94,7 +111,7 @@ const Navigation = () => {
           </li>
         </ul>
       </div>
-    </header>
+    </>
   );
 };
 
